@@ -1,0 +1,1041 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>ScienceVerse 4.0</title>
+
+    <!-- CSS -->
+
+    <link
+        rel="stylesheet"
+        href="style.css">
+
+    <!-- Font Awesome -->
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+</head>
+
+<body>
+
+<!-- =======================================================
+     LOADING SCREEN
+======================================================= -->
+
+<div id="loadingScreen">
+
+    <div class="loaderPlanet"></div>
+
+    <h1>ScienceVerse 4.0</h1>
+
+    <p>Loading the Universe...</p>
+
+</div>
+
+<!-- =======================================================
+     BACKGROUND
+======================================================= -->
+
+<div id="spaceBackground">
+
+    <div class="stars"></div>
+
+    <div class="stars2"></div>
+
+    <div class="stars3"></div>
+
+    <div class="nebula"></div>
+
+</div>
+
+<div id="cursorGlow"></div>
+
+<canvas id="confettiCanvas"></canvas>
+
+<!-- =======================================================
+     AUDIO
+======================================================= -->
+
+<audio
+    id="backgroundMusic"
+    loop>
+
+    <source
+        src="music/background.mp3"
+        type="audio/mpeg">
+
+</audio>
+
+<audio id="clickSound">
+
+    <source
+        src="music/click.mp3"
+        type="audio/mpeg">
+
+</audio>
+
+<audio id="successSound">
+
+    <source
+        src="music/success.mp3"
+        type="audio/mpeg">
+
+</audio>
+
+<audio id="wrongSound">
+
+    <source
+        src="music/wrong.mp3"
+        type="audio/mpeg">
+
+</audio>
+
+<audio id="themeSound">
+
+    <source
+        src="music/theme.mp3"
+        type="audio/mpeg">
+
+</audio>
+
+<!-- =======================================================
+     NAVIGATION
+======================================================= -->
+
+<nav>
+
+    <div class="logo">
+
+        <i class="fa-solid fa-flask"></i>
+
+        <span>ScienceVerse</span>
+
+    </div>
+
+    <ul>
+
+        <li><a href="#home">Home</a></li>
+
+        <li><a href="#themes">Themes</a></li>
+
+        <li><a href="#learn">Learn</a></li>
+
+        <li><a href="#scientist">AI</a></li>
+
+        <li><a href="#lab">Lab</a></li>
+
+        <li><a href="#quiz">Quiz</a></li>
+
+        <li><a href="#achievements">Awards</a></li>
+
+    </ul>
+
+    <div class="navButtons">
+
+        <button id="musicBtn">
+
+            <i class="fa-solid fa-music"></i>
+
+        </button>
+
+        <button id="settingsBtn">
+
+            <i class="fa-solid fa-gear"></i>
+
+        </button>
+
+    </div>
+
+</nav>
+
+<!-- =======================================================
+     HERO
+======================================================= -->
+
+<section
+    class="hero"
+    id="home">
+
+    <div class="heroLeft">
+
+        <div class="welcomeTag">
+
+            🚀 Welcome to ScienceVerse
+
+        </div>
+
+        <h1>
+
+            Explore the
+
+            <span>Universe</span>
+
+            of Science
+
+        </h1>
+
+        <p>
+
+            Learn Physics, Chemistry, Biology, Astronomy and
+            Earth Science through interactive lessons,
+            quizzes, achievements, animations and experiments.
+
+        </p>
+
+        <div class="heroButtons">
+
+            <button id="startLearning">
+
+                Start Learning
+
+            </button>
+
+            <button id="watchIntro">
+
+                Explore Themes
+
+            </button>
+
+        </div>
+
+        <div class="heroStats">
+
+            <div class="statCard">
+
+                <h3 id="xpDisplay">
+
+                    0
+
+                </h3>
+
+                <p>XP</p>
+
+            </div>
+
+            <div class="statCard">
+
+                <h3 id="levelDisplay">
+
+                    1
+
+                </h3>
+
+                <p>Level</p>
+
+            </div>
+
+            <div class="statCard">
+
+                <h3 id="coinsDisplay">
+
+                    0
+
+                </h3>
+
+                <p>Science Coins</p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="heroRight">
+
+        <div class="planet">
+
+            <div class="planetGlow"></div>
+
+            <div class="planetRing"></div>
+
+        </div>
+
+        <div class="floatingIcons">
+
+            <i class="fa-solid fa-atom"></i>
+
+            <i class="fa-solid fa-dna"></i>
+
+            <i class="fa-solid fa-microscope"></i>
+
+            <i class="fa-solid fa-rocket"></i>
+
+            <i class="fa-solid fa-globe"></i>
+
+            <i class="fa-solid fa-bolt"></i>
+
+        </div>
+
+    </div>
+
+</section>
+<!-- =======================================================
+     THEME CENTER
+======================================================= -->
+
+<section id="themes">
+
+    <h2 class="sectionTitle">🎨 Theme Center</h2>
+
+    <p class="sectionSubtitle">
+
+        Choose your favourite ScienceVerse appearance.
+
+    </p>
+
+    <div class="themeGrid">
+
+        <div class="themeCard">
+
+            <div class="themePreview galaxyTheme">
+
+                <div class="miniStars"></div>
+
+            </div>
+
+            <h3>🌌 Galaxy</h3>
+
+            <p>Deep space with glowing blue stars.</p>
+
+            <button class="themeButton" data-theme="galaxy">
+
+                Apply Theme
+
+            </button>
+
+        </div>
+
+        <div class="themeCard">
+
+            <div class="themePreview oceanTheme">
+
+                <div class="wave"></div>
+
+            </div>
+
+            <h3>🌊 Ocean</h3>
+
+            <p>Cool blue oceans with relaxing waves.</p>
+
+            <button class="themeButton" data-theme="ocean">
+
+                Apply Theme
+
+            </button>
+
+        </div>
+
+        <div class="themeCard">
+
+            <div class="themePreview natureTheme">
+
+                <div class="leaf"></div>
+
+            </div>
+
+            <h3>🌿 Nature</h3>
+
+            <p>Green forests full of life.</p>
+
+            <button class="themeButton" data-theme="nature">
+
+                Apply Theme
+
+            </button>
+
+        </div>
+
+        <div class="themeCard">
+
+            <div class="themePreview volcanoTheme">
+
+                <div class="lava"></div>
+
+            </div>
+
+            <h3>🌋 Volcano</h3>
+
+            <p>Hot lava and fiery colors.</p>
+
+            <button class="themeButton" data-theme="volcano">
+
+                Apply Theme
+
+            </button>
+
+        </div>
+
+        <div class="themeCard">
+
+            <div class="themePreview arcticTheme">
+
+                <div class="snow"></div>
+
+            </div>
+
+            <h3>❄ Arctic</h3>
+
+            <p>Frozen ice world with snowfall.</p>
+
+            <button class="themeButton" data-theme="arctic">
+
+                Apply Theme
+
+            </button>
+
+        </div>
+
+        <div class="themeCard">
+
+            <div class="themePreview neonTheme">
+
+                <div class="laser"></div>
+
+            </div>
+
+            <h3>💜 Neon</h3>
+
+            <p>Cyberpunk lights and glowing colors.</p>
+
+            <button class="themeButton" data-theme="neon">
+
+                Apply Theme
+
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- =======================================================
+     LEARN HUB
+======================================================= -->
+
+<section id="learn">
+
+    <h2 class="sectionTitle">
+
+        📚 Learn Science
+
+    </h2>
+
+    <p class="sectionSubtitle">
+
+        Select a subject and begin your journey.
+
+    </p>
+
+    <div class="subjectGrid">
+
+        <div class="subjectCard">
+
+            <i class="fa-solid fa-atom"></i>
+
+            <h3>Physics</h3>
+
+            <p>
+
+                Motion, forces, electricity,
+                magnets and energy.
+
+            </p>
+
+            <button class="lessonButton">
+
+                Learn Physics
+
+            </button>
+
+        </div>
+
+        <div class="subjectCard">
+
+            <i class="fa-solid fa-flask"></i>
+
+            <h3>Chemistry</h3>
+
+            <p>
+
+                Atoms, molecules,
+                reactions and elements.
+
+            </p>
+
+            <button class="lessonButton">
+
+                Learn Chemistry
+
+            </button>
+
+        </div>
+
+        <div class="subjectCard">
+
+            <i class="fa-solid fa-dna"></i>
+
+            <h3>Biology</h3>
+
+            <p>
+
+                Plants, animals,
+                cells and the human body.
+
+            </p>
+
+            <button class="lessonButton">
+
+                Learn Biology
+
+            </button>
+
+        </div>
+
+        <div class="subjectCard">
+
+            <i class="fa-solid fa-earth-americas"></i>
+
+            <h3>Earth Science</h3>
+
+            <p>
+
+                Weather, volcanoes,
+                earthquakes and rocks.
+
+            </p>
+
+            <button class="lessonButton">
+
+                Learn Earth
+
+            </button>
+
+        </div>
+
+        <div class="subjectCard">
+
+            <i class="fa-solid fa-star"></i>
+
+            <h3>Astronomy</h3>
+
+            <p>
+
+                Stars, galaxies,
+                planets and black holes.
+
+            </p>
+
+            <button class="lessonButton">
+
+                Learn Space
+
+            </button>
+
+        </div>
+
+        <div class="subjectCard">
+
+            <i class="fa-solid fa-microscope"></i>
+
+            <h3>Experiments</h3>
+
+            <p>
+
+                Fun and safe science
+                experiments to try.
+
+            </p>
+
+            <button class="lessonButton">
+
+                View Experiments
+
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- =======================================================
+     AI SCIENTIST
+======================================================= -->
+
+<section id="scientist">
+
+    <h2 class="sectionTitle">
+
+        🤖 AI Scientist
+
+    </h2>
+
+    <p class="sectionSubtitle">
+
+        Ask for facts and discover amazing science.
+
+    </p>
+
+    <div class="scientistSection">
+
+        <div class="robot">
+
+            <div class="robotEyes"></div>
+
+        </div>
+
+        <div class="chatPanel">
+
+            <h3>
+
+                Science Assistant
+
+            </h3>
+
+            <div id="chatBox">
+
+                👋 Hello! Press the button below to
+                receive a random science fact.
+
+            </div>
+
+            <button id="scienceFact">
+
+                Generate Science Fact
+
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- =======================================================
+     DAILY CHALLENGE
+======================================================= -->
+
+<section id="challenge">
+
+    <div class="challengeCard">
+
+        <h2>
+
+            🏆 Daily Challenge
+
+        </h2>
+
+        <p>
+
+            Complete today's quiz to earn
+            bonus XP and Science Coins!
+
+        </p>
+
+        <button id="dailyChallengeBtn">
+
+            Start Challenge
+
+        </button>
+
+    </div>
+
+</section>
+<!-- =======================================================
+     SCIENCE LAB
+======================================================= -->
+
+<section id="lab">
+
+    <h2 class="sectionTitle">
+
+        🧪 Virtual Science Lab
+
+    </h2>
+
+    <p class="sectionSubtitle">
+
+        Explore exciting science experiments and simulations.
+
+    </p>
+
+    <div class="labGrid">
+
+        <div class="labCard">
+
+            <i class="fa-solid fa-flask-vial"></i>
+
+            <h3>Acid vs Base</h3>
+
+            <p>
+
+                Discover how acids and bases react using
+                virtual indicators and experiments.
+
+            </p>
+
+            <button class="experimentButton">
+
+                Start Experiment
+
+            </button>
+
+        </div>
+
+        <div class="labCard">
+
+            <i class="fa-solid fa-bolt"></i>
+
+            <h3>Electric Circuit</h3>
+
+            <p>
+
+                Build a simple electric circuit and
+                understand how current flows.
+
+            </p>
+
+            <button class="experimentButton">
+
+                Build Circuit
+
+            </button>
+
+        </div>
+
+        <div class="labCard">
+
+            <i class="fa-solid fa-seedling"></i>
+
+            <h3>Plant Growth</h3>
+
+            <p>
+
+                Learn how sunlight, water and soil
+                affect plant growth.
+
+            </p>
+
+            <button class="experimentButton">
+
+                Explore
+
+            </button>
+
+        </div>
+
+        <div class="labCard">
+
+            <i class="fa-solid fa-globe"></i>
+
+            <h3>Solar System</h3>
+
+            <p>
+
+                Visit every planet and discover
+                amazing facts about our Solar System.
+
+            </p>
+
+            <button class="experimentButton">
+
+                Explore Space
+
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- =======================================================
+     QUIZ
+======================================================= -->
+
+<section id="quiz">
+
+    <h2 class="sectionTitle">
+
+        ❓ Science Quiz
+
+    </h2>
+
+    <p class="sectionSubtitle">
+
+        Test your knowledge and earn XP.
+
+    </p>
+
+    <div class="quizContainer">
+
+        <div class="quizTop">
+
+            <div>
+
+                <strong>Question</strong>
+
+                <span id="questionNumber">
+
+                    1 / 10
+
+                </span>
+
+            </div>
+
+            <div>
+
+                <strong>Score</strong>
+
+                <span id="score">
+
+                    0
+
+                </span>
+
+            </div>
+
+            <div>
+
+                <strong>XP</strong>
+
+                <span id="quizXP">
+
+                    +0
+
+                </span>
+
+            </div>
+
+            <div>
+
+                <strong>Streak</strong>
+
+                <span id="streak">
+
+                    0
+
+                </span>
+
+            </div>
+
+        </div>
+
+        <div class="progressBar">
+
+            <div id="progressFill"></div>
+
+        </div>
+
+        <h2 id="questionText">
+
+            Loading Question...
+
+        </h2>
+
+        <div id="answerContainer">
+
+            <!-- Answers created by JavaScript -->
+
+        </div>
+
+        <div class="quizButtons">
+
+            <button id="nextQuestion">
+
+                Next Question
+
+            </button>
+
+            <button id="restartQuiz">
+
+                Restart Quiz
+
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+<!-- =======================================================
+     ACHIEVEMENTS
+======================================================= -->
+
+<section id="achievements">
+
+    <h2 class="sectionTitle">
+
+        🏆 Achievements
+
+    </h2>
+
+    <p class="sectionSubtitle">
+
+        Unlock achievements by learning, experimenting and completing quizzes.
+
+    </p>
+
+    <div class="achievementGrid">
+
+        <div class="achievementCard">
+
+            🥉
+
+            <h3>First Steps</h3>
+
+            <p>Complete your first lesson.</p>
+
+        </div>
+
+        <div class="achievementCard">
+
+            🧪
+
+            <h3>Scientist</h3>
+
+            <p>Finish your first experiment.</p>
+
+        </div>
+
+        <div class="achievementCard">
+
+            ⭐
+
+            <h3>Quiz Master</h3>
+
+            <p>Score 100% on a quiz.</p>
+
+        </div>
+
+        <div class="achievementCard">
+
+            🚀
+
+            <h3>Explorer</h3>
+
+            <p>Visit every section of ScienceVerse.</p>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- =======================================================
+     SETTINGS
+======================================================= -->
+
+<section id="settings">
+
+    <h2 class="sectionTitle">
+
+        ⚙️ Settings
+
+    </h2>
+
+    <p class="sectionSubtitle">
+
+        Customize your ScienceVerse experience.
+
+    </p>
+
+    <div class="settingsGrid">
+
+        <button id="toggleMusic">
+
+            🎵 Toggle Music
+
+        </button>
+
+        <button id="resetProgress">
+
+            🔄 Reset Progress
+
+        </button>
+
+        <button id="saveProgress">
+
+            💾 Save Progress
+
+        </button>
+
+        <button id="randomFact">
+
+            💡 Random Fact
+
+        </button>
+
+    </div>
+
+</section>
+
+<!-- =======================================================
+     FOOTER
+======================================================= -->
+
+<footer>
+
+    <h2>
+
+        🌌 ScienceVerse 4.0
+
+    </h2>
+
+    <p>
+
+        Learn • Explore • Discover • Experiment
+
+    </p>
+
+    <div class="footerIcons">
+
+        <i class="fa-solid fa-atom"></i>
+
+        <i class="fa-solid fa-flask"></i>
+
+        <i class="fa-solid fa-microscope"></i>
+
+        <i class="fa-solid fa-rocket"></i>
+
+        <i class="fa-solid fa-globe"></i>
+
+    </div>
+
+    <p>
+
+        © 2026 ScienceVerse 4.0 | Built with HTML, CSS & JavaScript
+
+    </p>
+
+</footer>
+
+<!-- =======================================================
+     POPUPS
+======================================================= -->
+
+<div id="achievementPopup">
+
+    🏆 Achievement Unlocked!
+
+</div>
+
+<!-- =======================================================
+     JAVASCRIPT
+======================================================= -->
+
+<script src="script.js"></script>
+
+</body>
+
+</html>
