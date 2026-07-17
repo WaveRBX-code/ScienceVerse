@@ -1,0 +1,2663 @@
+/* ==========================================================
+   SCIENCEVERSE 4.0
+   STYLE.CSS
+   PART 1
+========================================================== */
+
+/* ===============================
+   GOOGLE FONT
+=============================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+/* ===============================
+   RESET
+=============================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    scroll-behavior:smooth;
+}
+
+html{
+    overflow-x:hidden;
+}
+
+body{
+    font-family:"Poppins",sans-serif;
+    background:#050816;
+    color:white;
+    overflow-x:hidden;
+    line-height:1.6;
+}
+
+/* ===============================
+   VARIABLES
+=============================== */
+
+:root{
+
+    --primary:#00d4ff;
+    --secondary:#7b2cff;
+    --accent:#38bdf8;
+
+    --bg:#050816;
+    --card:rgba(255,255,255,.08);
+    --glass:rgba(255,255,255,.06);
+    --border:rgba(255,255,255,.15);
+
+    --shadow:
+    0 20px 45px rgba(0,212,255,.18);
+
+}
+
+/* ===============================
+   BACKGROUND
+=============================== */
+
+#spaceBackground{
+
+    position:fixed;
+
+    inset:0;
+
+    z-index:-20;
+
+    overflow:hidden;
+
+    background:
+
+    radial-gradient(circle at top,
+
+    #18203f,
+
+    #050816 70%);
+
+}
+
+/* ===============================
+   STAR LAYERS
+=============================== */
+
+.stars,
+.stars2,
+.stars3{
+
+    position:absolute;
+
+    inset:0;
+
+}
+
+.stars{
+
+    background-image:
+    radial-gradient(white 1px,transparent 1px);
+
+    background-size:55px 55px;
+
+    animation:starsMove 140s linear infinite;
+
+}
+
+.stars2{
+
+    background-image:
+    radial-gradient(#8ddfff 2px,transparent 2px);
+
+    background-size:95px 95px;
+
+    opacity:.45;
+
+    animation:starsMove 200s linear infinite reverse;
+
+}
+
+.stars3{
+
+    background-image:
+    radial-gradient(white 2px,transparent 2px);
+
+    background-size:150px 150px;
+
+    opacity:.22;
+
+    animation:starsMove 260s linear infinite;
+
+}
+
+/* ===============================
+   NEBULA
+=============================== */
+
+.nebula{
+
+    position:absolute;
+
+    width:900px;
+
+    height:900px;
+
+    top:-250px;
+
+    left:-250px;
+
+    border-radius:50%;
+
+    filter:blur(80px);
+
+    background:
+
+    radial-gradient(circle,
+
+    rgba(123,44,255,.35),
+
+    transparent 70%);
+
+}
+
+/* ===============================
+   LOADING SCREEN
+=============================== */
+
+#loadingScreen{
+
+    position:fixed;
+
+    inset:0;
+
+    background:#030712;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:center;
+
+    gap:20px;
+
+    z-index:99999;
+
+    transition:.8s;
+
+}
+
+.loaderPlanet{
+
+    width:120px;
+
+    height:120px;
+
+    border-radius:50%;
+
+    background:
+
+    radial-gradient(circle at 30% 30%,
+
+    #67e8f9,
+
+    #2563eb,
+
+    #111827);
+
+    box-shadow:
+
+    0 0 60px rgba(0,212,255,.45);
+
+    animation:
+
+    floatPlanet 3s ease-in-out infinite,
+
+    rotatePlanet 18s linear infinite;
+
+}
+
+#loadingScreen h1{
+
+    font-size:2.8rem;
+
+    color:var(--primary);
+
+}
+
+#loadingScreen p{
+
+    color:#cbd5e1;
+
+}
+
+/* ===============================
+   CURSOR GLOW
+=============================== */
+
+#cursorGlow{
+
+    position:fixed;
+
+    width:24px;
+
+    height:24px;
+
+    border-radius:50%;
+
+    background:var(--primary);
+
+    filter:blur(12px);
+
+    pointer-events:none;
+
+    transform:translate(-50%,-50%);
+
+    z-index:9999;
+
+}
+
+/* ===============================
+   NAVBAR
+=============================== */
+
+nav{
+
+    position:fixed;
+
+    top:20px;
+
+    left:50%;
+
+    transform:translateX(-50%);
+
+    width:92%;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:16px 28px;
+
+    background:rgba(7,12,30,.55);
+
+    backdrop-filter:blur(18px);
+
+    border:1px solid var(--border);
+
+    border-radius:20px;
+
+    box-shadow:var(--shadow);
+
+    z-index:1000;
+
+}
+
+.logo{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+    color:var(--primary);
+
+    font-size:1.6rem;
+
+    font-weight:700;
+
+}
+
+.logo i{
+
+    font-size:2rem;
+
+}
+
+nav ul{
+
+    display:flex;
+
+    list-style:none;
+
+    gap:28px;
+
+}
+
+nav a{
+
+    color:white;
+
+    text-decoration:none;
+
+    transition:.35s;
+
+}
+
+nav a:hover{
+
+    color:var(--primary);
+
+}
+
+.navButtons{
+
+    display:flex;
+
+    gap:12px;
+
+}
+
+/* ===============================
+   BUTTONS
+=============================== */
+
+button{
+
+    border:none;
+
+    cursor:pointer;
+
+    border-radius:14px;
+
+    padding:14px 24px;
+
+    color:white;
+
+    font-weight:600;
+
+    font-size:1rem;
+
+    background:
+
+    linear-gradient(
+
+    135deg,
+
+    var(--primary),
+
+    var(--secondary));
+
+    transition:.35s;
+
+    box-shadow:
+
+    0 12px 30px rgba(0,212,255,.18);
+
+}
+
+button:hover{
+
+    transform:
+
+    translateY(-5px)
+
+    scale(1.03);
+
+    box-shadow:
+
+    0 20px 40px rgba(0,212,255,.35);
+
+}
+
+button:active{
+
+    transform:scale(.96);
+
+}
+
+/* ===============================
+   HERO
+=============================== */
+
+.hero{
+
+    min-height:100vh;
+
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+    gap:70px;
+
+    align-items:center;
+
+    padding:150px 8% 80px;
+
+}
+
+.heroLeft h1{
+
+    font-size:4.3rem;
+
+    line-height:1.1;
+
+    margin:22px 0;
+
+}
+
+.heroLeft span{
+
+    color:var(--primary);
+
+}
+
+.heroLeft p{
+
+    color:#d1d5db;
+
+    max-width:620px;
+
+}
+
+.welcomeTag{
+
+    display:inline-block;
+
+    padding:10px 18px;
+
+    border-radius:999px;
+
+    background:var(--glass);
+
+    border:1px solid var(--border);
+
+    color:var(--primary);
+
+}
+
+.heroButtons{
+
+    display:flex;
+
+    gap:18px;
+
+    margin-top:35px;
+
+}
+
+.heroStats{
+
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:20px;
+
+    margin-top:45px;
+
+}
+
+.statCard{
+
+    background:var(--glass);
+
+    border:1px solid var(--border);
+
+    border-radius:18px;
+
+    backdrop-filter:blur(18px);
+
+    padding:24px;
+
+    text-align:center;
+
+    transition:.35s;
+
+}
+
+.statCard:hover{
+
+    transform:translateY(-10px);
+
+    box-shadow:var(--shadow);
+
+}
+
+.statCard h3{
+
+    color:var(--primary);
+
+    font-size:2rem;
+
+}
+
+/* ===============================
+   HERO RIGHT
+=============================== */
+
+.heroRight{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    position:relative;
+
+}
+
+.planet{
+
+    width:340px;
+
+    height:340px;
+
+    border-radius:50%;
+
+    background:
+
+    radial-gradient(circle at 30% 30%,
+
+    #67e8f9,
+
+    #2563eb,
+
+    #111827);
+
+    position:relative;
+
+    box-shadow:
+
+    0 0 80px rgba(0,212,255,.35);
+
+}
+
+.planetGlow{
+
+    position:absolute;
+
+    inset:-25px;
+
+    border-radius:50%;
+
+    border:2px solid rgba(255,255,255,.15);
+
+}
+
+.planetRing{
+
+    position:absolute;
+
+    width:430px;
+
+    height:80px;
+
+    border:6px solid rgba(255,255,255,.22);
+
+    border-radius:50%;
+
+    left:50%;
+
+    top:50%;
+
+    transform:translate(-50%,-50%) rotate(-18deg);
+
+}
+
+.floatingIcons{
+
+    position:absolute;
+
+    inset:0;
+
+}
+
+.floatingIcons i{
+
+    position:absolute;
+
+    font-size:2rem;
+
+    color:var(--primary);
+}
+
+.floatingIcons i:nth-child(1){top:5%;left:10%;}
+.floatingIcons i:nth-child(2){top:20%;right:10%;}
+.floatingIcons i:nth-child(3){bottom:18%;left:0;}
+.floatingIcons i:nth-child(4){bottom:10%;right:5%;}
+.floatingIcons i:nth-child(5){top:65%;left:15%;}
+.floatingIcons i:nth-child(6){top:0;right:35%;}
+/* ==========================================================
+   SCIENCEVERSE 4.0
+   STYLE.CSS
+   PART 2
+========================================================== */
+
+/* ===============================
+   SECTION COMMON STYLE
+=============================== */
+
+section{
+
+    padding:100px 8%;
+
+}
+
+.sectionTitle{
+
+    text-align:center;
+
+    font-size:3rem;
+
+    color:var(--primary);
+
+    margin-bottom:15px;
+
+}
+
+.sectionSubtitle{
+
+    text-align:center;
+
+    color:#cbd5e1;
+
+    max-width:700px;
+
+    margin:0 auto 60px;
+
+}
+
+
+/* ===============================
+   THEME CENTER
+=============================== */
+
+.themeGrid{
+
+    display:grid;
+
+    grid-template-columns:
+
+    repeat(auto-fit,minmax(280px,1fr));
+
+    gap:30px;
+
+}
+
+
+.themeCard{
+
+    background:var(--glass);
+
+    border:1px solid var(--border);
+
+    border-radius:24px;
+
+    overflow:hidden;
+
+    backdrop-filter:blur(18px);
+
+    transition:.4s;
+
+    text-align:center;
+
+}
+
+
+.themeCard:hover{
+
+    transform:
+
+    translateY(-15px)
+
+    scale(1.03);
+
+    box-shadow:var(--shadow);
+
+}
+
+
+.themePreview{
+
+    height:190px;
+
+    position:relative;
+
+    overflow:hidden;
+
+}
+
+
+/* Theme Backgrounds */
+
+.galaxyTheme{
+
+    background:
+
+    linear-gradient(
+
+    135deg,
+
+    #020617,
+
+    #1d4ed8,
+
+    #7c3aed);
+
+}
+
+
+.oceanTheme{
+
+    background:
+
+    linear-gradient(
+
+    180deg,
+
+    #0369a1,
+
+    #06b6d4,
+
+    #67e8f9);
+
+}
+
+
+.natureTheme{
+
+    background:
+
+    linear-gradient(
+
+    180deg,
+
+    #14532d,
+
+    #22c55e,
+
+    #a3e635);
+
+}
+
+
+.volcanoTheme{
+
+    background:
+
+    linear-gradient(
+
+    180deg,
+
+    #450a0a,
+
+    #dc2626,
+
+    #fb923c);
+
+}
+
+
+.arcticTheme{
+
+    background:
+
+    linear-gradient(
+
+    180deg,
+
+    #e0f2fe,
+
+    #60a5fa);
+
+}
+
+
+.neonTheme{
+
+    background:
+
+    linear-gradient(
+
+    135deg,
+
+    #090014,
+
+    #7c3aed,
+
+    #ec4899);
+
+}
+
+
+/* Theme Animations */
+
+.miniStars{
+
+    position:absolute;
+
+    inset:0;
+
+    background-image:
+
+    radial-gradient(white 2px,transparent 2px);
+
+    background-size:40px 40px;
+
+    animation:starsMove 25s linear infinite;
+
+}
+
+
+.wave{
+
+    position:absolute;
+
+    width:200%;
+
+    height:200px;
+
+    bottom:-120px;
+
+    left:-50%;
+
+    background:
+
+    rgba(255,255,255,.25);
+
+    border-radius:50%;
+
+    animation:waveMove 6s linear infinite;
+
+}
+
+
+.leaf{
+
+    position:absolute;
+
+    width:30px;
+
+    height:30px;
+
+    background:#dcfce7;
+
+    border-radius:50% 0;
+
+    top:20px;
+
+    left:50%;
+
+    animation:leafFall 5s infinite;
+
+}
+
+
+.lava{
+
+    position:absolute;
+
+    inset:0;
+
+    background:
+
+    linear-gradient(
+
+    transparent,
+
+    rgba(255,120,0,.5));
+
+    animation:lavaGlow 2s infinite alternate;
+
+}
+
+
+.snow{
+
+    position:absolute;
+
+    inset:0;
+
+    background-image:
+
+    radial-gradient(white 2px,transparent 2px);
+
+    background-size:35px 35px;
+
+    animation:snowFall 8s linear infinite;
+
+}
+
+
+.laser{
+
+    position:absolute;
+
+    width:250%;
+
+    height:5px;
+
+    background:#ff00ff;
+
+    top:50%;
+
+    left:-75%;
+
+    box-shadow:
+
+    0 0 20px #ff00ff;
+
+    animation:laserMove 3s linear infinite;
+
+}
+
+
+.themeCard h3{
+
+    margin:20px 0 10px;
+
+}
+
+
+.themeCard p{
+
+    color:#d1d5db;
+
+    padding:0 20px;
+
+    min-height:60px;
+
+}
+
+
+.themeButton{
+
+    margin:25px;
+
+}
+
+
+
+/* ===============================
+   LEARN HUB
+=============================== */
+
+
+.subjectGrid{
+
+    display:grid;
+
+    grid-template-columns:
+
+    repeat(auto-fit,minmax(260px,1fr));
+
+    gap:30px;
+
+}
+
+
+.subjectCard{
+
+    background:var(--glass);
+
+    border:1px solid var(--border);
+
+    border-radius:24px;
+
+    padding:35px;
+
+    text-align:center;
+
+    backdrop-filter:blur(18px);
+
+    transition:.4s;
+
+}
+
+
+.subjectCard:hover{
+
+    transform:
+
+    translateY(-12px)
+
+    rotateX(5deg);
+
+    box-shadow:var(--shadow);
+
+}
+
+
+.subjectCard i{
+
+    font-size:3rem;
+
+    color:var(--primary);
+
+    margin-bottom:20px;
+
+}
+
+
+.subjectCard h3{
+
+    margin-bottom:15px;
+
+}
+
+
+.subjectCard p{
+
+    color:#d1d5db;
+
+    margin-bottom:25px;
+
+}
+
+
+
+/* ===============================
+   AI SCIENTIST
+=============================== */
+
+
+.scientistSection{
+
+    display:grid;
+
+    grid-template-columns:300px 1fr;
+
+    gap:60px;
+
+    align-items:center;
+
+}
+
+
+.robot{
+
+    width:240px;
+
+    height:240px;
+
+    margin:auto;
+
+    border-radius:50%;
+
+    background:
+
+    linear-gradient(
+
+    135deg,
+
+    #1e293b,
+
+    #64748b);
+
+    position:relative;
+
+    animation:floatRobot 5s infinite;
+
+    box-shadow:
+
+    0 0 50px rgba(0,212,255,.25);
+
+}
+
+
+.robotEyes{
+
+    position:absolute;
+
+    width:110px;
+
+    height:20px;
+
+    background:var(--primary);
+
+    border-radius:20px;
+
+    top:95px;
+
+    left:50%;
+
+    transform:translateX(-50%);
+
+    box-shadow:
+
+    0 0 25px var(--primary);
+
+}
+
+
+.chatPanel{
+
+    background:var(--glass);
+
+    border:1px solid var(--border);
+
+    border-radius:25px;
+
+    padding:35px;
+
+    backdrop-filter:blur(18px);
+
+}
+
+
+#chatBox{
+
+    margin:25px 0;
+
+    padding:20px;
+
+    min-height:140px;
+
+    border-radius:18px;
+
+    background:
+
+    rgba(255,255,255,.05);
+
+    line-height:1.8;
+
+}
+
+
+
+/* ===============================
+   DAILY CHALLENGE
+=============================== */
+
+
+.challengeCard{
+
+    max-width:850px;
+
+    margin:auto;
+
+    padding:45px;
+
+    text-align:center;
+
+    border-radius:30px;
+
+    background:
+
+    linear-gradient(
+
+    135deg,
+
+    rgba(0,212,255,.15),
+
+    rgba(123,44,255,.15));
+
+    border:1px solid var(--border);
+
+    backdrop-filter:blur(20px);
+
+    transition:.4s;
+
+}
+
+
+.challengeCard:hover{
+
+    transform:translateY(-10px);
+
+    box-shadow:var(--shadow);
+
+}
+
+
+.challengeCard p{
+
+    color:#d1d5db;
+
+    margin:25px 0;
+
+}
+/* ==========================================================
+   SCIENCEVERSE 4.0
+   STYLE.CSS
+   PART 3A
+========================================================== */
+
+
+/* ===============================
+   SCIENCE LAB
+=============================== */
+
+.labGrid{
+
+    display:grid;
+
+    grid-template-columns:
+
+    repeat(auto-fit,minmax(280px,1fr));
+
+    gap:30px;
+
+}
+
+
+.labCard{
+
+    background:var(--glass);
+
+    border:1px solid var(--border);
+
+    border-radius:25px;
+
+    padding:35px;
+
+    text-align:center;
+
+    backdrop-filter:blur(18px);
+
+    transition:.4s;
+
+    position:relative;
+
+    overflow:hidden;
+
+}
+
+
+.labCard::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:200%;
+
+    height:200%;
+
+    top:-100%;
+
+    left:-100%;
+
+    background:
+
+    linear-gradient(
+
+    135deg,
+
+    transparent,
+
+    rgba(255,255,255,.15),
+
+    transparent);
+
+    transform:rotate(45deg);
+
+    transition:.8s;
+
+}
+
+
+.labCard:hover::before{
+
+    top:100%;
+
+    left:100%;
+
+}
+
+
+.labCard:hover{
+
+    transform:
+
+    translateY(-12px)
+
+    scale(1.03);
+
+    box-shadow:var(--shadow);
+
+}
+
+
+.labCard i{
+
+    font-size:3.5rem;
+
+    color:var(--primary);
+
+    margin-bottom:20px;
+
+}
+
+
+.labCard h3{
+
+    margin-bottom:15px;
+
+}
+
+
+.labCard p{
+
+    color:#d1d5db;
+
+    margin-bottom:25px;
+
+}
+
+
+/* ===============================
+   EXPERIMENT BUTTONS
+=============================== */
+
+.experimentButton{
+
+    background:
+
+    linear-gradient(
+
+    135deg,
+
+    #22c55e,
+
+    #06b6d4);
+
+}
+
+
+
+/* ===============================
+   QUIZ SECTION
+=============================== */
+
+
+.quizContainer{
+
+    max-width:900px;
+
+    margin:auto;
+
+    padding:40px;
+
+    background:var(--glass);
+
+    border:1px solid var(--border);
+
+    border-radius:30px;
+
+    backdrop-filter:blur(20px);
+
+    box-shadow:var(--shadow);
+
+}
+
+
+.quizTop{
+
+    display:grid;
+
+    grid-template-columns:
+
+    repeat(4,1fr);
+
+    gap:20px;
+
+    margin-bottom:35px;
+
+}
+
+
+.quizTop div{
+
+    background:
+
+    rgba(255,255,255,.06);
+
+    padding:20px;
+
+    border-radius:18px;
+
+    text-align:center;
+
+}
+
+
+.quizTop strong{
+
+    display:block;
+
+    color:var(--primary);
+
+    margin-bottom:8px;
+
+}
+
+
+.quizTop span{
+
+    font-size:1.3rem;
+
+}
+
+
+/* Progress */
+
+.progressBar{
+
+    width:100%;
+
+    height:14px;
+
+    background:
+
+    rgba(255,255,255,.08);
+
+    border-radius:999px;
+
+    overflow:hidden;
+
+}
+
+
+#progressFill{
+
+    height:100%;
+
+    width:0%;
+
+    background:
+
+    linear-gradient(
+
+    90deg,
+
+    var(--primary),
+
+    var(--secondary));
+
+    border-radius:999px;
+
+    transition:.5s;
+
+}
+
+
+
+#questionText{
+
+    text-align:center;
+
+    margin:35px 0;
+
+    font-size:1.7rem;
+
+}
+
+
+
+/* Answers */
+
+
+#answerContainer{
+
+    display:grid;
+
+    gap:18px;
+
+}
+
+
+.answerButton{
+
+    padding:18px;
+
+    border-radius:18px;
+
+    background:
+
+    rgba(255,255,255,.05);
+
+    color:white;
+
+    border:2px solid transparent;
+
+    text-align:left;
+
+    transition:.35s;
+
+}
+
+
+.answerButton:hover{
+
+    border-color:var(--primary);
+
+    background:
+
+    rgba(0,212,255,.12);
+
+}
+
+
+.answerButton.correct{
+
+    background:#16a34a;
+
+}
+
+
+.answerButton.wrong{
+
+    background:#dc2626;
+
+}
+
+
+
+/* Quiz Buttons */
+
+
+.quizButtons{
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:20px;
+
+    margin-top:35px;
+
+}
+
+
+
+/* ===============================
+   ACHIEVEMENTS
+=============================== */
+
+
+.achievementGrid{
+
+    display:grid;
+
+    grid-template-columns:
+
+    repeat(auto-fit,minmax(230px,1fr));
+
+    gap:30px;
+
+}
+
+
+
+.achievementCard{
+
+    background:var(--glass);
+
+    border:1px solid var(--border);
+
+    border-radius:25px;
+
+    padding:35px;
+
+    text-align:center;
+
+    font-size:3rem;
+
+    backdrop-filter:blur(18px);
+
+    transition:.4s;
+
+}
+
+
+
+.achievementCard:hover{
+
+    transform:
+
+    translateY(-15px)
+
+    rotate(3deg);
+
+    box-shadow:var(--shadow);
+
+}
+
+
+
+.achievementCard h3{
+
+    font-size:1.2rem;
+
+    margin-top:20px;
+
+}
+
+
+
+.achievementCard p{
+
+    font-size:1rem;
+
+    color:#cbd5e1;
+
+    margin-top:10px;
+
+}
+/* ==========================================================
+   SCIENCEVERSE 4.0
+   STYLE.CSS
+   PART 3B (FINAL)
+========================================================== */
+
+
+/* ===============================
+   SETTINGS
+=============================== */
+
+.settingsGrid{
+
+    display:grid;
+
+    grid-template-columns:
+
+    repeat(auto-fit,minmax(240px,1fr));
+
+    gap:25px;
+
+    max-width:900px;
+
+    margin:auto;
+
+}
+
+
+.settingsGrid button{
+
+    padding:25px;
+
+    font-size:1.1rem;
+
+    background:
+
+    linear-gradient(
+
+    135deg,
+
+    rgba(0,212,255,.25),
+
+    rgba(123,44,255,.35));
+
+    border:1px solid var(--border);
+
+}
+
+
+
+/* ===============================
+   FOOTER
+=============================== */
+
+
+footer{
+
+    margin-top:100px;
+
+    padding:60px 8%;
+
+    text-align:center;
+
+    background:
+
+    rgba(255,255,255,.04);
+
+    border-top:
+
+    1px solid var(--border);
+
+    backdrop-filter:blur(15px);
+
+}
+
+
+footer h2{
+
+    font-size:2.2rem;
+
+    color:var(--primary);
+
+    margin-bottom:15px;
+
+}
+
+
+footer p{
+
+    color:#cbd5e1;
+
+}
+
+
+
+.footerIcons{
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:30px;
+
+    margin:30px 0;
+
+}
+
+
+
+.footerIcons i{
+
+    font-size:2rem;
+
+    color:var(--primary);
+
+    transition:.35s;
+
+}
+
+
+
+.footerIcons i:hover{
+
+    transform:
+
+    translateY(-10px)
+
+    scale(1.2);
+
+    text-shadow:
+
+    0 0 20px var(--primary);
+
+}
+
+
+
+/* ===============================
+   ACHIEVEMENT POPUP
+=============================== */
+
+
+#achievementPopup{
+
+    position:fixed;
+
+    right:30px;
+
+    top:30px;
+
+    padding:22px 35px;
+
+    border-radius:20px;
+
+    background:
+
+    linear-gradient(
+
+    135deg,
+
+    var(--primary),
+
+    var(--secondary));
+
+    color:white;
+
+    font-weight:700;
+
+    transform:
+
+    translateX(400px);
+
+    transition:.5s;
+
+    z-index:9999;
+
+    box-shadow:
+
+    0 20px 50px rgba(0,0,0,.3);
+
+}
+
+
+#achievementPopup.show{
+
+    transform:
+
+    translateX(0);
+
+}
+
+
+
+/* ===============================
+   AUDIO HIDDEN
+=============================== */
+
+
+audio{
+
+    display:none;
+
+}
+
+
+
+/* ===============================
+   SCROLLBAR
+=============================== */
+
+
+::-webkit-scrollbar{
+
+    width:12px;
+
+}
+
+
+
+::-webkit-scrollbar-track{
+
+    background:#020617;
+
+}
+
+
+
+::-webkit-scrollbar-thumb{
+
+    background:
+
+    linear-gradient(
+
+    var(--primary),
+
+    var(--secondary));
+
+    border-radius:999px;
+
+}
+
+
+
+/* ===============================
+   SELECTION
+=============================== */
+
+
+::selection{
+
+    background:var(--primary);
+
+    color:#001018;
+
+}
+
+
+
+/* ===============================
+   ANIMATIONS
+=============================== */
+
+
+@keyframes starsMove{
+
+    from{
+
+        transform:translateY(0);
+
+    }
+
+    to{
+
+        transform:translateY(1000px);
+
+    }
+
+}
+
+
+
+@keyframes floatPlanet{
+
+    0%,100%{
+
+        transform:translateY(0);
+
+    }
+
+    50%{
+
+        transform:translateY(-20px);
+
+    }
+
+}
+
+
+
+@keyframes rotatePlanet{
+
+    from{
+
+        transform:rotate(0deg);
+
+    }
+
+    to{
+
+        transform:rotate(360deg);
+
+    }
+
+}
+
+
+
+@keyframes floatRobot{
+
+    0%,100%{
+
+        transform:translateY(0);
+
+    }
+
+    50%{
+
+        transform:translateY(-15px);
+
+    }
+
+}
+
+
+
+@keyframes waveMove{
+
+    from{
+
+        transform:translateX(-50%);
+
+    }
+
+    to{
+
+        transform:translateX(0);
+
+    }
+
+}
+
+
+
+@keyframes leafFall{
+
+    0%{
+
+        transform:
+
+        translateY(-30px)
+
+        rotate(0deg);
+
+    }
+
+    100%{
+
+        transform:
+
+        translateY(220px)
+
+        rotate(360deg);
+
+    }
+
+}
+
+
+
+@keyframes lavaGlow{
+
+    from{
+
+        opacity:.4;
+
+    }
+
+    to{
+
+        opacity:1;
+
+    }
+
+}
+
+
+
+@keyframes snowFall{
+
+    from{
+
+        transform:translateY(-50px);
+
+    }
+
+    to{
+
+        transform:translateY(250px);
+
+    }
+
+}
+
+
+
+@keyframes laserMove{
+
+    from{
+
+        transform:translateX(-80%);
+
+    }
+
+    to{
+
+        transform:translateX(80%);
+
+    }
+
+}
+
+
+
+/* ===============================
+   SCROLL REVEAL SUPPORT
+=============================== */
+
+
+section{
+
+    opacity:1;
+
+    transition:.8s;
+
+}
+
+
+
+/* ===============================
+   RESPONSIVE DESIGN
+=============================== */
+
+
+@media(max-width:1100px){
+
+
+    .hero{
+
+        grid-template-columns:1fr;
+
+        text-align:center;
+
+    }
+
+
+    .heroLeft p{
+
+        margin:auto;
+
+    }
+
+
+    .heroButtons{
+
+        justify-content:center;
+
+    }
+
+
+    .scientistSection{
+
+        grid-template-columns:1fr;
+
+    }
+
+
+}
+
+
+
+@media(max-width:800px){
+
+
+    nav{
+
+        flex-direction:column;
+
+        gap:20px;
+
+        width:95%;
+
+    }
+
+
+    nav ul{
+
+        flex-wrap:wrap;
+
+        justify-content:center;
+
+    }
+
+
+    .heroLeft h1{
+
+        font-size:3rem;
+
+    }
+
+
+    .heroStats{
+
+        grid-template-columns:1fr;
+
+    }
+
+
+    .quizTop{
+
+        grid-template-columns:
+
+        repeat(2,1fr);
+
+    }
+
+
+}
+
+
+
+@media(max-width:500px){
+
+
+    section{
+
+        padding:70px 5%;
+
+    }
+
+
+    .heroLeft h1{
+
+        font-size:2.3rem;
+
+    }
+
+
+    .planet{
+
+        width:240px;
+
+        height:240px;
+
+    }
+
+
+    .planetRing{
+
+        width:300px;
+
+    }
+
+
+    .quizTop{
+
+        grid-template-columns:1fr;
+
+    }
+
+
+    .quizButtons{
+
+        flex-direction:column;
+
+    }
+
+
+}
+
+
+/* ===============================
+   END OF SCIENCEVERSE CSS
+=============================== */
+/* ==========================================================
+   SCIENCEVERSE THEME SYSTEM
+========================================================== */
+
+
+/* GALAXY */
+
+body.galaxy{
+
+    --primary:#00d4ff;
+    --secondary:#7b2cff;
+
+    background:
+    radial-gradient(circle,
+    #312e81,
+    #020617);
+
+}
+
+
+
+/* OCEAN */
+
+body.ocean{
+
+    --primary:#38bdf8;
+    --secondary:#06b6d4;
+
+    background:
+
+    linear-gradient(
+    135deg,
+    #082f49,
+    #164e63);
+
+}
+
+
+
+/* NATURE */
+
+body.nature{
+
+    --primary:#84cc16;
+    --secondary:#22c55e;
+
+    background:
+
+    linear-gradient(
+    135deg,
+    #052e16,
+    #14532d);
+
+}
+
+
+
+/* VOLCANO */
+
+body.volcano{
+
+    --primary:#fb923c;
+    --secondary:#ef4444;
+
+    background:
+
+    linear-gradient(
+    135deg,
+    #450a0a,
+    #7f1d1d);
+
+}
+
+
+
+/* ARCTIC */
+
+body.arctic{
+
+    --primary:#e0f2fe;
+    --secondary:#60a5fa;
+
+    background:
+
+    linear-gradient(
+    135deg,
+    #0c4a6e,
+    #164e63);
+
+}
+
+
+
+/* NEON */
+
+body.neon{
+
+    --primary:#f0abfc;
+    --secondary:#ec4899;
+
+    background:
+
+    linear-gradient(
+    135deg,
+    #090014,
+    #4c1d95);
+
+}
+
+
+
+/* Make sections follow theme */
+
+body.ocean .themeCard,
+body.nature .themeCard,
+body.volcano .themeCard,
+body.arctic .themeCard,
+body.neon .themeCard,
+body.galaxy .themeCard{
+
+    border-color:var(--primary);
+
+}
+
+
+
+/* Buttons update */
+
+body.ocean button,
+body.nature button,
+body.volcano button,
+body.arctic button,
+body.neon button,
+body.galaxy button{
+
+    background:
+
+    linear-gradient(
+    135deg,
+    var(--primary),
+    var(--secondary));
+
+}
+/* ==========================================================
+   SCIENCEVERSE 4.0
+   ENHANCED THEME EFFECTS
+========================================================== */
+
+
+/* ===============================
+   GALAXY THEME 🌌
+=============================== */
+
+body.galaxy #spaceBackground{
+
+    background:
+    radial-gradient(circle at top,
+    #4c1d95,
+    #020617 70%);
+
+}
+
+
+body.galaxy .nebula{
+
+    background:
+    radial-gradient(circle,
+    #a855f7,
+    transparent 70%);
+
+    filter:blur(100px);
+
+}
+
+
+
+/* ===============================
+   OCEAN THEME 🌊
+=============================== */
+
+body.ocean #spaceBackground{
+
+    background:
+
+    linear-gradient(
+    180deg,
+    #082f49,
+    #0e7490,
+    #164e63);
+
+}
+
+
+body.ocean .nebula{
+
+    background:
+
+    radial-gradient(circle,
+    #22d3ee,
+    transparent 70%);
+
+}
+
+
+body.ocean .planet{
+
+    background:
+
+    radial-gradient(circle at 30% 30%,
+    #67e8f9,
+    #0284c7,
+    #082f49);
+
+}
+
+
+
+/* ===============================
+   NATURE THEME 🌿
+=============================== */
+
+body.nature #spaceBackground{
+
+    background:
+
+    linear-gradient(
+    135deg,
+    #052e16,
+    #14532d,
+    #365314);
+
+}
+
+
+body.nature .nebula{
+
+    background:
+
+    radial-gradient(circle,
+    #84cc16,
+    transparent 70%);
+
+}
+
+
+body.nature .planet{
+
+    background:
+
+    radial-gradient(circle at 30% 30%,
+    #bef264,
+    #22c55e,
+    #14532d);
+
+}
+
+
+
+/* ===============================
+   VOLCANO THEME 🌋
+=============================== */
+
+body.volcano #spaceBackground{
+
+    background:
+
+    linear-gradient(
+    135deg,
+    #1c0505,
+    #7f1d1d,
+    #ea580c);
+
+}
+
+
+body.volcano .nebula{
+
+    background:
+
+    radial-gradient(circle,
+    #f97316,
+    transparent 70%);
+
+}
+
+
+body.volcano .planet{
+
+    background:
+
+    radial-gradient(circle at 30% 30%,
+    #facc15,
+    #ef4444,
+    #450a0a);
+
+    box-shadow:
+
+    0 0 90px orange;
+
+}
+
+
+
+/* ===============================
+   ARCTIC THEME ❄
+=============================== */
+
+body.arctic #spaceBackground{
+
+    background:
+
+    linear-gradient(
+    180deg,
+    #e0f2fe,
+    #7dd3fc,
+    #0369a1);
+
+}
+
+
+body.arctic{
+
+    color:#082f49;
+
+}
+
+
+body.arctic .nebula{
+
+    background:
+
+    radial-gradient(circle,
+    white,
+    transparent 70%);
+
+}
+
+
+body.arctic .planet{
+
+    background:
+
+    radial-gradient(circle at 30% 30%,
+    white,
+    #93c5fd,
+    #1e3a8a);
+
+}
+
+
+
+/* ===============================
+   NEON THEME 💜
+=============================== */
+
+body.neon #spaceBackground{
+
+    background:
+
+    linear-gradient(
+    135deg,
+    #090014,
+    #3b0764,
+    #831843);
+
+}
+
+
+body.neon .nebula{
+
+    background:
+
+    radial-gradient(circle,
+    #f0abfc,
+    transparent 70%);
+
+}
+
+
+body.neon button{
+
+    box-shadow:
+
+    0 0 25px #ec4899;
+
+}
+
+
+body.neon .planet{
+
+    background:
+
+    radial-gradient(circle at 30% 30%,
+    #f0abfc,
+    #a855f7,
+    #090014);
+
+    box-shadow:
+
+    0 0 100px #ec4899;
+
+}
+
+
+
+/* ===============================
+   GLOBAL THEME TRANSITION
+=============================== */
+
+
+body,
+button,
+.card,
+.themeCard,
+.subjectCard,
+.labCard,
+.quizContainer,
+.chatPanel,
+.challengeCard,
+.statCard{
+
+    transition:
+
+    background 0.8s ease,
+    color 0.8s ease,
+    border-color 0.8s ease,
+    box-shadow 0.8s ease;
+
+}
